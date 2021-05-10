@@ -549,7 +549,7 @@ public class RedBlackTree<T extends Comparable<T>> {
 	// @return: returns a node with the key, key, if not found, returns null
 	// Searches for a node with key k and returns the first such node, if no
 	// such node is found returns null
-	public RedBlackNode<T> search(T key){
+	public RedBlackNode<T> search(Association key){
 
 		// Initialize a pointer to the root to traverse the tree
 		RedBlackNode<T> current = root;
@@ -640,7 +640,7 @@ public class RedBlackTree<T extends Comparable<T>> {
             return;
         } else if (node.key.compareTo(key) > 0) {
             getGreaterThan(node.left, key, list);
-            list.add(node.key);
+            list.add((T)node.key);
             getGreaterThan(node.right, key, list);
         } else {
             getGreaterThan(node.right, key, list);
