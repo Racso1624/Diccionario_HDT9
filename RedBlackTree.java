@@ -161,8 +161,8 @@ public class RedBlackTree<T extends Comparable<T>> {
 	}// end rightRotateFixup(RedBlackNode y)
 
 
-    public void insert(T key) {
-        insert(new RedBlackNode<T>(key));
+    public void insert(T key,T value) {
+        insert(new RedBlackNode<T>(key,value));
     }
 
     // @param: z, the node to be inserted into the Tree rooted at root
@@ -564,7 +564,7 @@ public class RedBlackTree<T extends Comparable<T>> {
 				return current;
 
 			// go left or right based on value of current and key
-			else if (current.key.compareTo(key) < 0)
+			else if (current.key.compareTo((Association)key) < 0)
 				current = current.right;
 
 			// go left or right based on value of current and key
@@ -580,7 +580,7 @@ public class RedBlackTree<T extends Comparable<T>> {
 
 	// @param: key, any Comparable object
 	// @return: return's the number of elements greater than key
-	public int numGreater(T key){
+	public int numGreater(Association key){
 
 		// Call findNumGreater(root, key) which will return the number
 		// of nodes whose key is greater than key
@@ -591,7 +591,7 @@ public class RedBlackTree<T extends Comparable<T>> {
 
 	// @param: key, any Comparable object
 	// @return: return's teh number of elements smaller than key
-	public int numSmaller(T key){
+	public int numSmaller(Association key){
 
 		// Call findNumSmaller(root,key) which will return
 		// the number of nodes whose key is greater than key
@@ -603,7 +603,7 @@ public class RedBlackTree<T extends Comparable<T>> {
 	// @param: node, the root of the tree, the key who we must
 	// compare other node key's to.
 	// @return: the number of nodes greater than key.
-	public int findNumGreater(RedBlackNode<T> node, T key){
+	public int findNumGreater(RedBlackNode<T> node, Association key){
 
 		// Base Case: if node is nil, return 0
 		if (isNil(node))
@@ -627,14 +627,14 @@ public class RedBlackTree<T extends Comparable<T>> {
      * @param maxReturned Maximum number of results to return
      * @return List of keys greater than key.  List may not exceed maxReturned
      */
-    public List<T> getGreaterThan(T key, Integer maxReturned) {
+    public List<T> getGreaterThan(Association key, Integer maxReturned) {
         List<T> list = new ArrayList<T>();
         getGreaterThan(root, key, list);
         return list.subList(0, Math.min(maxReturned, list.size()));
     }
 
 
-    private void getGreaterThan(RedBlackNode<T> node, T key,
+    private void getGreaterThan(RedBlackNode<T> node, Association key,
                                 List<T> list) {
         if (isNil(node)) {
             return;
@@ -650,7 +650,7 @@ public class RedBlackTree<T extends Comparable<T>> {
     // @param: node, the root of the tree, the key who we must compare other
 	// node key's to.
 	// @return: the number of nodes smaller than key.
-	public int findNumSmaller(RedBlackNode<T> node, T key){
+	public int findNumSmaller(RedBlackNode<T> node, Association key){
 
 		// Base Case: if node is nil, return 0
 		if (isNil(node)) return 0;

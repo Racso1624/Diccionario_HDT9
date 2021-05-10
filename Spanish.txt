@@ -219,8 +219,8 @@ abidance	tolerancia, conformismo[Noun]
 abide	respetar[Noun]
 abide	tolerar,aguantar
 abide	quedar(se)
-abided	moro/
-abider	morador
+abided moro/
+abider morador
 abides	mora
 abiding	permanente, perdurable
 abidingly	permanentemente[Adverb]

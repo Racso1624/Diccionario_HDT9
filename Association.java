@@ -46,9 +46,18 @@ public class Association <K,V> implements MapEntry<K,V>
     }
 
     public String toString()
-    {
-        StringBuffer s = new StringBuffer();
-        s.append("<Association: "+getKey()+"="+getValue()+">");
-        return s.toString();
+	{
+		StringBuffer s = new StringBuffer();
+		s.append("<Association: "  +  getKey()  +  "="  +  getValue()  +  ">");
+		return s.toString();
+	}
+
+    public int compareTo(Association ExternalKey)
+	{
+		String a = this.getKey().toString();
+        String b = ExternalKey.getKey().toString();
+        if(a.length()<b.length())
+			return -1;
+        return 0;    
     }
 }

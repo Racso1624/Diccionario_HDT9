@@ -7,7 +7,9 @@
     /** Possible color for this node */
     public static final int RED = 1;
 	// the key of each node
-	public T key;
+	//public T key;
+	public Association<T,T> key;
+
 
     /** Parent of node */
     RedBlackNode<T> parent;
@@ -32,8 +34,11 @@
     }
 
 	// Constructor which sets key to the argument.
-	RedBlackNode(T key){
-        this();
-        this.key = key;
+	RedBlackNode(T llave, T value) {
+		key = new Association<>(llave, value);
 	}
+
+	
+    
+	
 }// end class RedBlackNode
