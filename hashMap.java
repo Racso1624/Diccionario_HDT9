@@ -12,52 +12,19 @@ import java.util.Set;
 public class hashMap<K,O> extends HashMap<K, O> implements MapGeneral<K,O> {
 
     @Override
-    public void Put(K key, O object) {
+    public void insert(K key, O object) {
         put(key,object);
     }
 
     @Override
-    public void Remove(K key) {
-        remove(key);
-    }
-
-    @Override
-    public Set<K> KeySet() {
-        return keySet();
-    }
-
-    @Override
-    public boolean ContainsValue(O o) {
-        return containsValue(o);
-    }
-
-    @Override
-    public O Get(K key) {
+    public O buscar(K key) {
         return get(key);
     }
 
     @Override
-    public boolean IsEmpty() {
-        return isEmpty();
+    public boolean ContainsKey(Object key) {
+        // TODO Auto-generated method stub
+        return super.containsKey(key);
     }
 
-    @Override
-    public void Replace(K key, O object) {
-        replace(key,object);
-    }
-
-    @Override
-    public int Size() {
-        return size();
-    }
-
-    @Override
-    public boolean ContainsKey(K key) {
-        return containsKey(key);
-    }
-
-    @Override
-    public Collection<O> Values() {
-        return values();
-    }
 }

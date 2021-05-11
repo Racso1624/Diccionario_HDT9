@@ -1,8 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
+/*
+Esta implementación se obtuvo de internet y se adapto a la hoja de trabajo con fines didacticos
+
+*/
 // Class Definitions
-public class RedBlackTree<T extends Comparable<T>>{
+public class RedBlackTree<T extends Comparable<T>> implements MapGeneral<T, T>{
 
 	// Root initialized to nil.
 	private RedBlackNode<T> nil = new RedBlackNode<T>();
@@ -160,7 +165,7 @@ public class RedBlackTree<T extends Comparable<T>>{
 
 	}// end rightRotateFixup(RedBlackNode y)
 
-
+	@Override
     public void insert(T key,T value) {
         insert(new RedBlackNode<T>(key,value));
     }
@@ -325,6 +330,8 @@ public class RedBlackTree<T extends Comparable<T>>{
 		// Return successor
 		return y;
 	}// end treeMinimum(RedBlackNode x)
+
+	
 
 
 	// @param: z, the RedBlackNode which is to be removed from the the tree
@@ -577,6 +584,31 @@ public class RedBlackTree<T extends Comparable<T>>{
 
 
 	}// end search(int key)
+
+
+	@Override
+	public T buscar(T key) {
+
+		// we have not found a node whose key is "key"
+		Association busqueda = new Association(key, "");
+		RedBlackNode nodobusqueda = search(busqueda);
+		return (T)nodobusqueda.key.getValue();
+
+	}
+
+	@Override
+	public boolean ContainsKey(T key) {
+		// TODO Auto-generated method stub
+		Association busqueda = new Association(key, "");
+		RedBlackNode exist = search(busqueda);
+		if(exist instanceof RedBlackNode)
+		{
+			return true;
+		}
+		
+
+		return false;
+	}
 
 	// @param: key, any Comparable object
 	// @return: return's the number of elements greater than key
