@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Class Definitions
-public class RedBlackTree<T extends Comparable<T>> {
+public class RedBlackTree<T extends Comparable<T>>{
 
 	// Root initialized to nil.
 	private RedBlackNode<T> nil = new RedBlackNode<T>();

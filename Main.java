@@ -12,8 +12,6 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-
-
         try {
             File obj = new File("Spanish.txt");
             Scanner myReader = new Scanner(obj);
@@ -21,7 +19,7 @@ public class Main {
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();//Se toma la linea de texto
                 String[] dataList = data.split(" ");//Se separa
-
+                
             }
             myReader.close();
         } catch (FileNotFoundException e) {

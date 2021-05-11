@@ -12,11 +12,11 @@ import java.util.Set;
 
 public interface MapGeneral<K,O> {
 
-    public void Put(K key, O object);
+    public void insert(K key, O object);
     public void Remove(K key);
     public Set<K> KeySet();
     public boolean ContainsValue(O o);
-    public O Get(K key);
+    public O search(K key);
     public boolean IsEmpty();
     public void Replace(K key, O object);
     public int Size();

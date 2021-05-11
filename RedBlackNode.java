@@ -37,8 +37,5 @@
 	RedBlackNode(T llave, T value) {
 		key = new Association<>(llave, value);
 	}
-
-	
-    
 	
 }// end class RedBlackNode
