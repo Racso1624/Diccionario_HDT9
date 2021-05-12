@@ -1,15 +1,14 @@
 /**
  */ // class RedBlackNode
- class RedBlackNode<T extends Comparable<T>> {
+class RedBlackNode<T extends Comparable<T>> {
 
     /** Possible color for this node */
     public static final int BLACK = 0;
     /** Possible color for this node */
     public static final int RED = 1;
-	// the key of each node
-	//public T key;
-	public Association<T,T> key;
-
+    // the key of each node
+    // public T key;
+    public Association<T, T> key;
 
     /** Parent of node */
     RedBlackNode<T> parent;
@@ -24,7 +23,7 @@
     // the color of a node
     public int color;
 
-    RedBlackNode(){
+    RedBlackNode() {
         color = BLACK;
         numLeft = 0;
         numRight = 0;
@@ -33,9 +32,15 @@
         right = null;
     }
 
-	// Constructor which sets key to the argument.
-	RedBlackNode(T llave, T value) {
-		key = new Association<>(llave, value);
-	}
-	
+    // Constructor which sets key to the argument.
+    RedBlackNode(T llave, T value) {
+        key = new Association<>(llave, value);
+        color = BLACK;
+        numLeft = 0;
+        numRight = 0;
+        parent = null;
+        left = null;
+        right = null;
+    }
+
 }// end class RedBlackNode
