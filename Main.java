@@ -13,7 +13,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         MapGeneral Implementacion = null;
         Factory factory = new Factory();
-        String[] frase = {};
+        String[] frasenueva = {};
 
         try {
             File obj = new File("texto.txt");
@@ -21,7 +21,7 @@ public class Main {
             // Si existe se hace un ciclo
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();// Se toma la linea de texto
-                frase = data.split(" ");
+                frasenueva = data.split(" ");
             }
             myReader.close();
         } catch (FileNotFoundException e) {
@@ -34,6 +34,8 @@ public class Main {
 
         boolean var = false;
         a: while (var == false) {// Se realiza el ciclo principal
+
+            String[] frase = frasenueva;
 
             boolean var2 = false;
             while (var2 == false) {
@@ -71,9 +73,7 @@ public class Main {
                 // Si existe se hace un ciclo
                 while (myReader.hasNextLine()) {
                     String data = myReader.nextLine();// Se toma la linea de texto
-                    data.replaceAll("\t", " ");
-                    data.replaceAll("\s", " ");
-                    String[] dataList = data.split(" ");// Se separa
+                    String[] dataList = data.split("	");// Se separa
                     String significado = "";
                     for (int i = 1; i < dataList.length; i++) {
                         significado += dataList[i];
@@ -95,7 +95,7 @@ public class Main {
 
                 if (Implementacion.ContainsKey(palabra.toLowerCase())) {
                     System.out.println("Hola si entre");
-                    frase[i] = Implementacion.buscar(palabra);
+                    frase[i] = Implementacion.buscar(palabra.toLowerCase());
                 } else {
                     String nuevaPalabra = "";// Se crea una nueva palabra
                     if (palabra.charAt(0) != '*' && palabra.charAt(palabra.length() - 1) != '*') {

@@ -8,7 +8,6 @@ public class Association<K, V> implements MapEntry<K, V> {
     public Association(K key, V value) {
         theKey = key;
         theValue = value;
-        System.out.println("Se creo el Association");
     }
 
     public boolean equals(Object other) {
