@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -72,14 +73,13 @@ public class Main {
                 while (myReader.hasNextLine()) {
                     String data = myReader.nextLine();// Se toma la linea de texto
                     data.replaceAll("\t", " ");
-                    data.replaceAll("\s", " ");
                     String[] dataList = data.split(" ");// Se separa
                     String significado = "";
                     for (int i = 1; i < dataList.length; i++) {
                         significado += dataList[i];
                     }
 
-                    Implementacion.insert(dataList[0], significado);
+                    Implementacion.insert(dataList[0].toString().toLowerCase(), significado);
                 }
                 myReader.close();
             } catch (FileNotFoundException e) {
@@ -91,11 +91,10 @@ public class Main {
             for (int i = 0; i < frase.length; i++) {// Se realiza el ciclo del tamaño de la frase
 
                 String palabra = frase[i];// Se toma cada una de las palabras de la frase
-                System.out.println(palabra);
+
 
                 if (Implementacion.ContainsKey(palabra.toLowerCase())) {
-                    System.out.println("Hola si entre");
-                    frase[i] = Implementacion.buscar(palabra);
+                    frase[i] = Implementacion.buscar(palabra.toLowerCase());
                 } else {
                     String nuevaPalabra = "";// Se crea una nueva palabra
                     if (palabra.charAt(0) != '*' && palabra.charAt(palabra.length() - 1) != '*') {

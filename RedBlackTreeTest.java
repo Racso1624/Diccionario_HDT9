@@ -28,15 +28,17 @@ public class RedBlackTreeTest {
     @Test
     public void constainsKey() {
         arbol = new RedBlackTree();
-        arbol.insert("JUnit", "Comprobado");
-        assertEquals(true, arbol.ContainsKey("JUnit"));
+        arbol.insert("the", "la");
+        arbol.insert("women", "mujer");
+        assertEquals(true, arbol.ContainsKey("the"));
     }
 
     @Test
     public void buscarr() {
         arbol = new RedBlackTree();
-        arbol.insert("JUnit", "Comprobado");
-        assertEquals("Comprobado", arbol.buscar("JUnit"));
+        arbol.insert("the", "la");
+        arbol.insert("women", "mujer");
+        assertEquals("la", arbol.buscar("the"));
     }
 
 }
