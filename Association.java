@@ -44,7 +44,7 @@ public class Association<K, V> implements MapEntry<K, V> {
         String a = this.getKey().toString();
         String b = ExternalKey.getKey().toString();
         if (a.length() < b.length())
-            return 1;
-        return -1;
+            return -1;
+        return 0;
     }
 }

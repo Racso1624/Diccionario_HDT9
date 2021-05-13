@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
-import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -14,7 +13,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         MapGeneral Implementacion = null;
         Factory factory = new Factory();
-        String[] frase = {};
+        String[] frasenueva = {};
 
         try {
             File obj = new File("texto.txt");
@@ -22,7 +21,7 @@ public class Main {
             // Si existe se hace un ciclo
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();// Se toma la linea de texto
-                frase = data.split(" ");
+                frasenueva = data.split(" ");
             }
             myReader.close();
         } catch (FileNotFoundException e) {
@@ -35,6 +34,8 @@ public class Main {
 
         boolean var = false;
         a: while (var == false) {// Se realiza el ciclo principal
+
+            String[] frase = frasenueva;
 
             boolean var2 = false;
             while (var2 == false) {
@@ -72,14 +73,13 @@ public class Main {
                 // Si existe se hace un ciclo
                 while (myReader.hasNextLine()) {
                     String data = myReader.nextLine();// Se toma la linea de texto
-                    data.replaceAll("\t", " ");
-                    String[] dataList = data.split(" ");// Se separa
+                    String[] dataList = data.split("	");// Se separa
                     String significado = "";
                     for (int i = 1; i < dataList.length; i++) {
                         significado += dataList[i];
                     }
 
-                    Implementacion.insert(dataList[0].toString().toLowerCase(), significado);
+                    Implementacion.insert(dataList[0], significado);
                 }
                 myReader.close();
             } catch (FileNotFoundException e) {
@@ -91,9 +91,10 @@ public class Main {
             for (int i = 0; i < frase.length; i++) {// Se realiza el ciclo del tamaño de la frase
 
                 String palabra = frase[i];// Se toma cada una de las palabras de la frase
-
+                System.out.println(palabra);
 
                 if (Implementacion.ContainsKey(palabra.toLowerCase())) {
+                    System.out.println("Hola si entre");
                     frase[i] = Implementacion.buscar(palabra.toLowerCase());
                 } else {
                     String nuevaPalabra = "";// Se crea una nueva palabra

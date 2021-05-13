@@ -155,8 +155,6 @@ public class RedBlackTree<T extends Comparable<T>> implements MapGeneral<T, T> {
 	@Override
 	public void insert(T key, T value) {
 
-		System.out.println("La llave es: " + key);
-		System.out.println("El valor es: " + value);
 		insert(new RedBlackNode<T>(key, value));
 	}
 
@@ -164,7 +162,6 @@ public class RedBlackTree<T extends Comparable<T>> implements MapGeneral<T, T> {
 	// Inserts z into the appropriate position in the RedBlackTree while
 	// updating numLeft and numRight values.
 	private void insert(RedBlackNode<T> z) {
-		System.out.println("Entre al insert2");
 		// Create a reference to root & initialize a node to nil
 		RedBlackNode<T> y = nil;
 		RedBlackNode<T> x = root;
