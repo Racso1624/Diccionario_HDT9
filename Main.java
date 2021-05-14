@@ -13,15 +13,14 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         MapGeneral Implementacion = null;
         Factory factory = new Factory();
-        String[] frasenueva = {};
+        String data = "";
 
         try {
             File obj = new File("texto.txt");
             Scanner myReader = new Scanner(obj);
             // Si existe se hace un ciclo
             while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();// Se toma la linea de texto
-                frasenueva = data.split(" ");
+                data = myReader.nextLine();// Se toma la linea de texto
             }
             myReader.close();
         } catch (FileNotFoundException e) {
@@ -35,7 +34,7 @@ public class Main {
         boolean var = false;
         a: while (var == false) {// Se realiza el ciclo principal
 
-            String[] frase = frasenueva;
+            String[] frase = data.split(" ");
 
             boolean var2 = false;
             while (var2 == false) {
@@ -72,8 +71,8 @@ public class Main {
                 Scanner myReader = new Scanner(obj);
                 // Si existe se hace un ciclo
                 while (myReader.hasNextLine()) {
-                    String data = myReader.nextLine();// Se toma la linea de texto
-                    String[] dataList = data.split("	");// Se separa
+                    String data2 = myReader.nextLine();// Se toma la linea de texto
+                    String[] dataList = data2.split("	");// Se separa
                     String significado = "";
                     for (int i = 1; i < dataList.length; i++) {
                         significado += dataList[i];
@@ -91,7 +90,6 @@ public class Main {
             for (int i = 0; i < frase.length; i++) {// Se realiza el ciclo del tamaño de la frase
 
                 String palabra = frase[i];// Se toma cada una de las palabras de la frase
-                System.out.println(palabra);
 
                 if (Implementacion.ContainsKey(palabra.toLowerCase())) {
                     System.out.println("Hola si entre");

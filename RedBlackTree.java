@@ -573,7 +573,7 @@ public class RedBlackTree<T extends Comparable<T>> implements MapGeneral<T, T> {
 		// TODO Auto-generated method stub
 		Association busqueda = new Association(key, "");
 		RedBlackNode exist = search(busqueda);
-		if (exist instanceof RedBlackNode) {
+		if (exist != null){
 			return true;
 		}
 
