@@ -950,7 +950,7 @@ adjuvant	adj - adyuvante; coadyuvante
 administration	n  -  administracion -f  (accent over  o)
 administrators	administradores
 admire	admirar
-admission	n - (to the hospital) adnision -f (accent over the   o); ingreso
+admission	n - (to the hospital) adnision -f (accent over 1   o); ingreso
 admit	vt - (to the hospital) internar, ingressar [Verb]
 admitted	vt (pret & pp) - (to be admitted) internarse, ingresarse; She was admitted yesterday - Fue internada ayar; You need to be admitted - ud. necesita ser internado.
 adobe	adobe
