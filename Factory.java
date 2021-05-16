@@ -1,4 +1,8 @@
-/*
+/**
+ * Oscar Fernando Lopez Barrios 20679
+ * Sebastian Aristondo Perez 20880
+ * Estructuras de Datos
+ * 
  * Factory
  */
 public class Factory {

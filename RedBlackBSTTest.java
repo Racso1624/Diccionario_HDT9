@@ -1,7 +1,13 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Test;
 
-
+/**
+ * Oscar Fernando Lopez Barrios 20679
+ * Sebastian Aristondo Perez 20880
+ * Estructuras de Datos
+ * 
+ * RedBlackBSTTest
+ */
 
 public class RedBlackBSTTest {
 

@@ -4,17 +4,23 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
+ * Oscar Fernando Lopez Barrios 20679
+ * Sebastian Aristondo Perez 20880
+ * Estructuras de Datos
+ * 
  * Main
  */
 public class Main {
 
     public static void main(String[] args) {
 
+        //Se crean las instancias
         Scanner scanner = new Scanner(System.in);
         MapGeneral Implementacion = null;
         Factory factory = new Factory();
         String data = "";
 
+        //Se revisa que el archivo de texto exista
         try {
             File obj = new File("texto.txt");
             Scanner myReader = new Scanner(obj);
@@ -35,7 +41,7 @@ public class Main {
         a: while (var == false) {// Se realiza el ciclo principal
 
             String[] frase = data.split(" ");
-
+            //Se hace el ciclo para las opciones
             boolean var2 = false;
             while (var2 == false) {
                 System.out.println("\n\nIngrese la implemenacion que desea:");
@@ -43,14 +49,15 @@ public class Main {
                 System.out.println("2) HashMap");
                 System.out.println("3) Salir\n");
 
+                //Se revisa que la opcion ingresada sea correcta
                 try {
 
                     int opcion = scanner.nextInt();// Se verifica el numero
 
-                    if (opcion == 1) {// Si es Ingles
+                    if (opcion == 1) {// Si RBT
                         Implementacion = factory.factory(opcion);
                         var2 = true;
-                    } else if (opcion == 2) {// Si es Español
+                    } else if (opcion == 2) {// Si hashMap
                         Implementacion = factory.factory(opcion);
                         var2 = true;
                     } else if (opcion == 3) {
@@ -66,6 +73,7 @@ public class Main {
                 }
             }
 
+            //Se revisa que exista el archivo
             try {
                 File obj = new File("Spanish.txt");
                 Scanner myReader = new Scanner(obj);
@@ -73,11 +81,12 @@ public class Main {
                 while (myReader.hasNextLine()) {
                     String data2 = myReader.nextLine();// Se toma la linea de texto
                     String[] dataList = data2.split("	");// Se separa
+                    //Se toma todo el significado
                     String significado = "";
                     for (int i = 1; i < dataList.length; i++) {
                         significado += dataList[i];
                     }
-
+                    //Se inserta a la implementacion
                     Implementacion.insert(dataList[0], significado);
                 }
                 myReader.close();
@@ -91,9 +100,8 @@ public class Main {
 
                 String palabra = frase[i];// Se toma cada una de las palabras de la frase
 
-                if (Implementacion.ContainsKey(palabra.toLowerCase())) {
-                    System.out.println("Hola si entre");
-                    frase[i] = Implementacion.buscar(palabra.toLowerCase());
+                if (Implementacion.ContainsKey(palabra.toLowerCase())) {//Si la encuentra en la implementacion
+                    frase[i] = Implementacion.buscar(palabra.toLowerCase());//Se busca y la devuelve
                 } else {
                     String nuevaPalabra = "";// Se crea una nueva palabra
                     if (palabra.charAt(0) != '*' && palabra.charAt(palabra.length() - 1) != '*') {

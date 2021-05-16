@@ -1,4 +1,10 @@
-/*
+/**
+ * Oscar Fernando Lopez Barrios 20679
+ * Sebastian Aristondo Perez 20880
+ * Estructuras de Datos
+ * 
+ * Association
+ * 
  * La implementación de esta clase se obtuvo gracias al material compartido en canvas
  */
 public class Association<K, V> implements MapEntry<K, V> {

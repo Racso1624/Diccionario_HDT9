@@ -2,6 +2,12 @@ import java.util.NoSuchElementException;
 import java.util.Queue;
 
 /**
+ * Oscar Fernando Lopez Barrios 20679
+ * Sebastian Aristondo Perez 20880
+ * Estructuras de Datos
+ * 
+ * RedBlackBST
+ *
  *  The {@code BST} class represents an ordered symbol table of generic
  *  key-value pairs.
  *  It supports the usual <em>put</em>, <em>get</em>, <em>contains</em>,
